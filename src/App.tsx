@@ -40,7 +40,7 @@ function App() {
     });
   };
 
-  const uniqueIngredients = [...new Set(ingredients)];
+  const uniqueIngredients = [...new Set(burguer)];
 
   return (
     <>
