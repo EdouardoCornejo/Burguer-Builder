@@ -1,0 +1,13 @@
+.btn-container {
+  display: flex;
+  gap: 10px;
+}
+
+.btn {
+  background: #f39c12;
+  color: white;
+  border: none;
+  padding: 10px 20px 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
