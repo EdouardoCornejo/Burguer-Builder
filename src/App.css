@@ -112,6 +112,29 @@
   padding: 0px;
   margin: 0px;
   display: inline-block;
+  transition: transform 0.2s ease;
+}
+
+.restart:hover {
+  transform: scale(1.15);
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(6px);
+  }
+}
+
+.empty-hint {
+  text-align: center;
+  font-size: 14px;
+  color: #b3521e;
+  margin: 4px 0;
+  animation: bounce 1.2s ease-in-out infinite;
 }
 
 @keyframes rotate {

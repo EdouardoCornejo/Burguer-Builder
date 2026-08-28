@@ -4,10 +4,10 @@ import { Ingredients } from './components';
 import { Controls } from './components';
 import Restart from './assets/renew.svg';
 
-function App() {
-  const burguer = ['salad', 'salad', 'beacon', 'cheese', 'cheese', 'meat', 'meat', 'tomato'];
+const AVAILABLE_INGREDIENTS = ['salad', 'beacon', 'cheese', 'meat', 'tomato'];
 
-  const [ingredients, setIngredients] = useState(burguer);
+function App() {
+  const [ingredients, setIngredients] = useState<string[]>([]);
 
   const addIngredient = (ingredient: string) => {
     setIngredients([...ingredients, ingredient]);
@@ -22,15 +22,13 @@ function App() {
   };
 
   const restartBurger = () => {
-    setIngredients(burguer);
+    setIngredients([]);
     const imgElement = document.querySelector('.restart');
     imgElement?.classList.add('rotate');
     imgElement?.addEventListener('animationend', () => {
       imgElement.classList.remove('rotate');
     });
   };
-
-  const uniqueIngredients = [...new Set(burguer)];
 
   return (
     <>
@@ -44,11 +42,12 @@ function App() {
           <div className="seeds1"></div>
           <div className="seeds2"></div>
         </div>
+        {ingredients.length === 0 && <p className="empty-hint">¡Agrega ingredientes! 👇</p>}
         <Ingredients ingredients={ingredients} />
         <div className="bread-bottom"></div>
 
         <Controls
-          ingredients={uniqueIngredients}
+          ingredients={AVAILABLE_INGREDIENTS}
           addIngredient={addIngredient}
           removeIngredient={removeIngredient}
         />
