@@ -1,5 +1,5 @@
-import { FC } from "react";
-import "./icons.css";
+import type { FC } from 'react';
+import './icons.css';
 
 interface IngredientImages {
   salad: string;
@@ -16,11 +16,7 @@ interface IconsProps {
 export const Icons: FC<IconsProps> = ({ Images, ingredient }) => {
   return (
     <>
-      <img
-        src={Images[ingredient as keyof typeof Images]}
-        className="img"
-        alt={ingredient}
-      />
+      <img src={Images[ingredient as keyof typeof Images]} className="img" alt={ingredient} />
     </>
   );
 };

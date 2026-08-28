@@ -1,5 +1,5 @@
-import { FC } from "react";
-import "./ingredients.css";
+import type { FC } from 'react';
+import './ingredients.css';
 
 interface IngredientsProps {
   ingredients: string[];

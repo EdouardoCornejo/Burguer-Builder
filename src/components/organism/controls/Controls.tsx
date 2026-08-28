@@ -1,12 +1,12 @@
-import { FC } from "react";
-import salad from "../../../assets/salad.png";
-import beacon from "../../../assets/beacon.png";
-import cheese from "../../../assets/cheese.png";
-import meat from "../../../assets/meat.png";
-import tomato from "../../../assets/tomato.png";
+import type { FC } from 'react';
+import salad from '../../../assets/salad.png';
+import beacon from '../../../assets/beacon.png';
+import cheese from '../../../assets/cheese.png';
+import meat from '../../../assets/meat.png';
+import tomato from '../../../assets/tomato.png';
 
-import "./controls.css";
-import { Buttons, Icons } from "../../atoms";
+import './controls.css';
+import { Buttons, Icons } from '../../atoms';
 
 interface ControlsProps {
   ingredients: string[];
@@ -14,11 +14,7 @@ interface ControlsProps {
   removeIngredient: (ingredient: string) => void;
 }
 
-export const Controls: FC<ControlsProps> = ({
-  ingredients,
-  addIngredient,
-  removeIngredient,
-}) => {
+export const Controls: FC<ControlsProps> = ({ ingredients, addIngredient, removeIngredient }) => {
   const ingredientsImages = {
     salad: salad,
     beacon: beacon,

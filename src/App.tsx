@@ -1,20 +1,11 @@
-import { useState } from "react";
-import "./App.css";
-import { Ingredients } from "./components";
-import { Controls } from "./components";
-import Restart from "./assets/renew.svg";
+import { useState } from 'react';
+import './App.css';
+import { Ingredients } from './components';
+import { Controls } from './components';
+import Restart from './assets/renew.svg';
 
 function App() {
-  const burguer = [
-    "salad",
-    "salad",
-    "beacon",
-    "cheese",
-    "cheese",
-    "meat",
-    "meat",
-    "tomato"
-  ];
+  const burguer = ['salad', 'salad', 'beacon', 'cheese', 'cheese', 'meat', 'meat', 'tomato'];
 
   const [ingredients, setIngredients] = useState(burguer);
 
@@ -25,18 +16,17 @@ function App() {
   const removeIngredient = (ingredient: string) => {
     setIngredients(
       ingredients.filter(
-        (ing, index) =>
-          ing !== ingredient || index !== ingredients.indexOf(ingredient)
-      )
+        (ing, index) => ing !== ingredient || index !== ingredients.indexOf(ingredient),
+      ),
     );
   };
 
   const restartBurger = () => {
     setIngredients(burguer);
-    const imgElement = document.querySelector(".restart");
-    imgElement?.classList.add("rotate");
-    imgElement?.addEventListener("animationend", () => {
-      imgElement.classList.remove("rotate");
+    const imgElement = document.querySelector('.restart');
+    imgElement?.classList.add('rotate');
+    imgElement?.addEventListener('animationend', () => {
+      imgElement.classList.remove('rotate');
     });
   };
 
@@ -47,12 +37,7 @@ function App() {
       <div className="box">
         <div className="title-content">
           <h1 className="title">Burguer Builder</h1>
-          <img
-            src={Restart}
-            alt="img"
-            className="restart"
-            onClick={restartBurger}
-          />
+          <img src={Restart} alt="img" className="restart" onClick={restartBurger} />
         </div>
 
         <div className="bread-top">
