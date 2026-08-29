@@ -1,22 +1,13 @@
-import { useState } from "react";
-import "./App.css";
-import { Ingredients } from "./components";
-import { Controls } from "./components";
-import Restart from "./assets/renew.svg";
+import { useState } from 'react';
+import './App.css';
+import { Ingredients } from './components';
+import { Controls } from './components';
+import Restart from './assets/renew.svg';
+
+const AVAILABLE_INGREDIENTS = ['salad', 'beacon', 'cheese', 'meat', 'tomato'];
 
 function App() {
-  const burguer = [
-    "salad",
-    "salad",
-    "beacon",
-    "cheese",
-    "cheese",
-    "meat",
-    "meat",
-    "tomato"
-  ];
-
-  const [ingredients, setIngredients] = useState(burguer);
+  const [ingredients, setIngredients] = useState<string[]>([]);
 
   const addIngredient = (ingredient: string) => {
     setIngredients([...ingredients, ingredient]);
@@ -25,45 +16,38 @@ function App() {
   const removeIngredient = (ingredient: string) => {
     setIngredients(
       ingredients.filter(
-        (ing, index) =>
-          ing !== ingredient || index !== ingredients.indexOf(ingredient)
-      )
+        (ing, index) => ing !== ingredient || index !== ingredients.indexOf(ingredient),
+      ),
     );
   };
 
   const restartBurger = () => {
-    setIngredients(burguer);
-    const imgElement = document.querySelector(".restart");
-    imgElement?.classList.add("rotate");
-    imgElement?.addEventListener("animationend", () => {
-      imgElement.classList.remove("rotate");
+    setIngredients([]);
+    const imgElement = document.querySelector('.restart');
+    imgElement?.classList.add('rotate');
+    imgElement?.addEventListener('animationend', () => {
+      imgElement.classList.remove('rotate');
     });
   };
-
-  const uniqueIngredients = [...new Set(burguer)];
 
   return (
     <>
       <div className="box">
         <div className="title-content">
           <h1 className="title">Burguer Builder</h1>
-          <img
-            src={Restart}
-            alt="img"
-            className="restart"
-            onClick={restartBurger}
-          />
+          <img src={Restart} alt="img" className="restart" onClick={restartBurger} />
         </div>
 
         <div className="bread-top">
           <div className="seeds1"></div>
           <div className="seeds2"></div>
         </div>
+        {ingredients.length === 0 && <p className="empty-hint">¡Agrega ingredientes! 👇</p>}
         <Ingredients ingredients={ingredients} />
         <div className="bread-bottom"></div>
 
         <Controls
-          ingredients={uniqueIngredients}
+          ingredients={AVAILABLE_INGREDIENTS}
           addIngredient={addIngredient}
           removeIngredient={removeIngredient}
         />

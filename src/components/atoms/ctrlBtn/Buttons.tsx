@@ -1,5 +1,5 @@
-import { FC } from "react";
-import "./buttons.css";
+import type { FC } from 'react';
+import './buttons.css';
 
 interface ButtonsProps {
   ingredient: string;
@@ -7,11 +7,7 @@ interface ButtonsProps {
   removeIngredient: (ingredient: string) => void;
 }
 
-export const Buttons: FC<ButtonsProps> = ({
-  ingredient,
-  addIngredient,
-  removeIngredient,
-}) => {
+export const Buttons: FC<ButtonsProps> = ({ ingredient, addIngredient, removeIngredient }) => {
   return (
     <>
       <div className="btn-container">

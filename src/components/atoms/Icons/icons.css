@@ -2,4 +2,9 @@
   width: 30px;
   height: 30px;
   padding-left: 10px;
+  transition: transform 0.2s ease;
+}
+
+.control:hover .img {
+  transform: scale(1.15) rotate(-6deg);
 }
