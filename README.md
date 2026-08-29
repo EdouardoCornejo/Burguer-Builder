@@ -5,7 +5,7 @@ control panel and the burger redraws in real time. Every ingredient layer is ren
 **pure CSS** (no images for the stack), so the project is really an exercise in component
 composition, React state management and CSS art.
 
-🔗 **Live demo:** <https://burguer-builder-two.vercel.app/>
+🔗 **Live demo:** <https://burguer-builder-m89t310qu-eduardo-cornejos-projects.vercel.app/>
 
 > **Status:** small, working project with known tech debt. This README documents the
 > **current** architecture as a step before refactoring — see
