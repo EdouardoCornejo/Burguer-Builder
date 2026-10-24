@@ -7,7 +7,7 @@ Aplicación de una sola página para **armar una hamburguesa de forma interactiv
 ![Tech](https://img.shields.io/badge/React-18-61DAFB?logo=react)
 ![Tech](https://img.shields.io/badge/TypeScript-5-3178C6?logo=typescript)
 ![Tech](https://img.shields.io/badge/Vite-5-646CFF?logo=vite)
-![Tech](https://img.shields.io/badge/CSS3-Art-1572B6?logo=css3)
+![Tech](https://img.shields.io/badge/CSS3-Art-1572B6?logo=css)
 ![Tech](https://img.shields.io/badge/ESLint-8-4B32C3?logo=eslint)
 ![Tech](https://img.shields.io/badge/Prettier-3-F7B93E?logo=prettier)
 
@@ -70,26 +70,26 @@ Vite sirve la app en `http://localhost:5173` con recarga en caliente.
 
 ### Scripts
 
-| Comando             | Comando real                                                   | Qué hace                                         |
-| ------------------- | -------------------------------------------------------------- | ------------------------------------------------ |
-| `yarn dev`          | `vite`                                                         | Servidor de desarrollo con HMR.                  |
-| `yarn build`        | `tsc && vite build`                                            | Comprueba tipos y genera el bundle en `dist/`.   |
-| `yarn preview`      | `vite preview`                                                 | Sirve localmente el build de producción.         |
-| `yarn lint`         | `eslint . --report-unused-disable-directives --max-warnings 0` | Lint; falla con cualquier warning.               |
-| `yarn lint:fix`     | `eslint . --report-unused-disable-directives --fix`            | Lint aplicando correcciones automáticas.         |
-| `yarn format:fix`   | `prettier --write .`                                           | Formatea todo el proyecto.                       |
-| `yarn format:check` | `prettier --check .`                                           | Comprueba el formato (lo usa la CI).             |
-| `yarn prepare`      | `husky`                                                        | Instala los Git hooks tras `yarn install`.       |
+| Comando             | Comando real                                                   | Qué hace                                       |
+| ------------------- | -------------------------------------------------------------- | ---------------------------------------------- |
+| `yarn dev`          | `vite`                                                         | Servidor de desarrollo con HMR.                |
+| `yarn build`        | `tsc && vite build`                                            | Comprueba tipos y genera el bundle en `dist/`. |
+| `yarn preview`      | `vite preview`                                                 | Sirve localmente el build de producción.       |
+| `yarn lint`         | `eslint . --report-unused-disable-directives --max-warnings 0` | Lint; falla con cualquier warning.             |
+| `yarn lint:fix`     | `eslint . --report-unused-disable-directives --fix`            | Lint aplicando correcciones automáticas.       |
+| `yarn format:fix`   | `prettier --write .`                                           | Formatea todo el proyecto.                     |
+| `yarn format:check` | `prettier --check .`                                           | Comprueba el formato (lo usa la CI).           |
+| `yarn prepare`      | `husky`                                                        | Instala los Git hooks tras `yarn install`.     |
 
 ---
 
 ## Controles
 
-| Elemento                     | Acción                                              |
-| ---------------------------- | --------------------------------------------------- |
-| **Add** (en cada fila)       | Añade una capa de ese ingrediente a la hamburguesa. |
-| **Remove** (en cada fila)    | Quita la primera capa de ese ingrediente.           |
-| Icono de reinicio (↻)        | Vacía la hamburguesa y lanza la animación de giro.  |
+| Elemento                  | Acción                                              |
+| ------------------------- | --------------------------------------------------- |
+| **Add** (en cada fila)    | Añade una capa de ese ingrediente a la hamburguesa. |
+| **Remove** (en cada fila) | Quita la primera capa de ese ingrediente.           |
+| Icono de reinicio (↻)     | Vacía la hamburguesa y lanza la animación de giro.  |
 
 ---
 
@@ -189,12 +189,12 @@ Burguer-Builder/
 
 ## Personalización
 
-| Qué                         | Dónde                                         | Por defecto                                     |
-| --------------------------- | --------------------------------------------- | ----------------------------------------------- |
-| Ingredientes disponibles    | `AVAILABLE_INGREDIENTS` en `App.tsx`          | `salad`, `beacon`, `cheese`, `meat`, `tomato`   |
-| Forma/colores de cada capa  | `ingredients.css`                             | Una clase por ingrediente                       |
-| Animación de entrada        | `@keyframes layer-drop` en `ingredients.css`  | `0.45s`                                         |
-| Tamaño del lienzo           | `.box` en `App.css`                           | `500px × 450px` (`90%` × `300px` en móvil)      |
+| Qué                        | Dónde                                        | Por defecto                                   |
+| -------------------------- | -------------------------------------------- | --------------------------------------------- |
+| Ingredientes disponibles   | `AVAILABLE_INGREDIENTS` en `App.tsx`         | `salad`, `beacon`, `cheese`, `meat`, `tomato` |
+| Forma/colores de cada capa | `ingredients.css`                            | Una clase por ingrediente                     |
+| Animación de entrada       | `@keyframes layer-drop` en `ingredients.css` | `0.45s`                                       |
+| Tamaño del lienzo          | `.box` en `App.css`                          | `500px × 450px` (`90%` × `300px` en móvil)    |
 
 > Para añadir un ingrediente hay que tocar varios sitios: `AVAILABLE_INGREDIENTS`, el mapa `ingredientsImages` de `Controls` (con su PNG en `src/assets`) y una clase CSS con el mismo nombre en `ingredients.css`.
 
